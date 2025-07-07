@@ -1,24 +1,25 @@
-# _Sample project_
+### 📁 ws2812_control/README.md
 
-(See the README.md file in the upper level 'examples' directory for more information about examples.)
+```markdown
+# WS2812 RGB LED Control
 
-This is the simplest buildable example. The example is used by command `idf.py create-project`
-that copies the project to user specified path and set it's name. For more information follow the [docs page](https://docs.espressif.com/projects/esp-idf/en/latest/api-guides/build-system.html#start-a-new-project)
+Controlul unui LED RGB WS2812 folosind ESP32-S3 și biblioteca `led_strip.h` din ESP-IDF.
 
+## Fișiere
+- `ws2812.c` – inițializarea și controlul LED-ului
+- `ws2812.h` – funcții publice
 
+## Funcții disponibile
+```c
+void ws2812_init(gpio_num_t gpio);
+void ws2812_set_color(uint8_t r, uint8_t g, uint8_t b);
+## Exemplu
+#include "ws2812.h"
 
-## How to use example
-We encourage the users to use the example as a template for the new projects.
-A recommended way is to follow the instructions on a [docs page](https://docs.espressif.com/projects/esp-idf/en/latest/api-guides/build-system.html#start-a-new-project).
-
-## Example folder contents
-
-The project **sample_project** contains one source file in C language [main.c](main/main.c). The file is located in folder [main](main).
-
-ESP-IDF projects are built using CMake. The project build configuration is contained in `CMakeLists.txt`
-files that provide set of directives and instructions describing the project's source files and targets
-(executable, library, or both). 
-
+void app_main() {
+    ws2812_init(GPIO_NUM_18);
+    ws2812_set_color(255, 0, 0); // roșu
+}
 Below is short explanation of remaining files in the project folder.
 
 ```
