@@ -1,5 +1,6 @@
 ### 📁 ws2812_control/README.md
-
+## ESP-IDF v6.0.0 
+## Builded and flashed on MAC OS
 ```markdown
 # WS2812 RGB LED Control
 
